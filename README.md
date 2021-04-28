@@ -1,4 +1,4 @@
-# cesium + geojson
+# cesium + sgg + geojson
 
 
 ## 요약
@@ -12,4 +12,4 @@
 * geojson
 
 ## 참고 파일
-* [시연 동영상 링크](https://github.com/HyunSeongKil/cesium-geojson/blob/master/rain_bylegend_color_height_20210428.mp4?raw=true)
+* [시연 동영상 링크](https://github.com/HyunSeongKil/my-cesium-sgg-geojson/raw/main/population_by_sgg_v0.2%2020210428.mp4)
