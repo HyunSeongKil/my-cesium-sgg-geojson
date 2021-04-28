@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>   
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+
+        <style>
+            div.network{
+                width: 100%;
+                height: 600px;
+                border: 1px solid #efefef;
+            }
+        </style>
+
+        <th:block th:replace="cmmn/style :: cmmnStyle"></th:block>
+        <th:block th:replace="cmmn/js :: cmmnJs"></th:block>
+
+        <script th:src="@{/externlib/vis-network/vis-network.min.js}" defer></script>
+        <script th:src="@{/js/network/list.js}" defer></script>
+        <script type="text/javascript">
+        window.addEventListener('load', ()=>{
+            const list = new List();
+            list.init();
+        });
+        </script>
+
+        
+    </head>
+
+    <body>
+        <th:block th:insert="cmmn/header :: cmmnHeader"></th:block>
+
+
+
+        
+        <div class="container">
+
+            <h2>TM2 API를 이용한 키워드 검색</h2>
+            
+            
+            <div class="row form-group search">
+                    <input type="hidden" name="pageNo" value="1" >
+                    <div class="col-3">
+                        <label for="searchKeyword">키워드</label>
+                        <input type="search" id="searchKeyword" name="searchKeyword" class="form-control" value="바이브컴퍼니" autofocus >
+                    </div>
+                    <div class="col-3">
+                        <label for="searchStartDt">시작일자</label>
+                        <input type="date" id="searchStartDate" name="searchStartDate" class="form-control" value="2021-04-01" >
+                    </div>
+                    <div class="col-3">
+                        <label for="searchStartDt">종료일자</label>
+                        <input type="date" id="searchEndDate" name="searchEndDate" class="form-control"  value="2021-04-30">
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-secondary search">검색</button>
+                    </div>
+            </div>
+
+
+            <div class="network-content">
+                <div class="network"></div>
+            </div>
+            
+            <div>
+                <span>※ 노드를 <b>더블클릭</b>하면 해당 노드의 키워드로 자동 검색한 후 결과를 표시합니다.</span>
+            </div>
+        </div>
+
+
+        <th:block th:insert="cmmn/footer :: cmmnFooter"></th:block>
+
+
+
+    </body>
+</html>

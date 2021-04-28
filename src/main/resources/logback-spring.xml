@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--@see https://eblo.tistory.com/60--> 
+
+
+<!-- 30초마다 설정 파일의 변경을 확인한다. 파일이 변경되면 다시 로딩한다 -->
+<configuration scan="true" scanPeriod="30 seconds">
+    
+    <!-- console log -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%-5level %d{yy-MM-dd HH:mm:ss} %logger[%method:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+ 
+    <!-- 로그 파일 생성 관련 -->
+    <!-- 로그 모드 -->
+    <!-- log file -->
+<!--    <appender name="FILE"-->
+<!--              class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>d:\\work\\log\\web.log</file>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>d:\\work\\logs\\web.%d{yyyy-MM-dd}.log-->
+<!--            </fileNamePattern>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--            <pattern>%-5level %d{yy-MM-dd HH:mm:ss} [%logger{0}:%line] - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+  
+  
+    <logger name="kr.vaiv" level="DEBUG"/> 
+    <logger name="jdbc.resultset" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.springframework" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="console"/>
+<!--        <appender-ref ref="FILE"/>-->
+    </root>
+</configuration>

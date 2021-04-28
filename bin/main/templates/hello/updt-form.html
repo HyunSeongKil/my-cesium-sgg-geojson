@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <th:block th:replace="cmmn/style :: cmmnStyle"></th:block>
+        <th:block th:replace="cmmn/js :: cmmnJs"></th:block>
+
+
+
+        <script th:src="@{/js/hello/updt-form.js}" defer></script>
+        <script type="text/javascript">
+        window.addEventListener('load', ()=>{
+            const updtForm = new UpdtForm();
+            updtForm.init();
+        });
+        </script>
+    </head>
+
+    <body>
+        <div th:insert="cmmn/header :: cmmnHeader"></div>
+
+        <div class="container">
+            <form id="f">
+                <input type="hidden" name="id" th:value="${data.id}">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" class="form-control" th:value="${data.name}" placeholder="이름을 입력하시기 바랍니다." autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="cn">내용</label>
+                    <textarea id="cn" name="cn" class="form-control" th:text="${data.cn}" placeholder="내용을 입력하시기 바랍니다."></textarea>
+                </div>
+            </form>
+
+            <div>
+                <button type="button" class="btn btn-primary updt">수정</button>
+                <button type="button" class="btn btn-secondary cancel">취소</button>
+            </div>
+        </div>
+
+
+        <div th:insert="cmmn/footer :: cmmnFooter"></div>
+    </body>
+</html>

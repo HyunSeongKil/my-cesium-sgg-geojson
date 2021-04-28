@@ -1,0 +1,50 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch WebApplication",
+            "request": "launch",
+            "mainClass": "kr.vaiv.sdt.web.WebApplication"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-WebApplication<sdt-web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "kr.vaiv.sdt.web.WebApplication",
+            "projectName": "sdt-web",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SdtApplication<sdt-web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "kr.vaiv.sdt.SdtApplication",
+            "projectName": "sdt-web",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SdtApplication<my-cesium-geojson>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "kr.vaiv.sdt.SdtApplication",
+            "projectName": "my-cesium-geojson",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SdtApplication<my-cesium-sgg-geojson>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "kr.vaiv.sdt.SdtApplication",
+            "projectName": "my-cesium-sgg-geojson",
+            "args": ""
+        }
+    ]
+}

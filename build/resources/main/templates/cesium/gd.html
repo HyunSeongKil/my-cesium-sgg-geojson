@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <th:block th:replace="cmmn/style :: cmmnStyle"></th:block>
+        <th:block th:replace="cmmn/js :: cmmnJs"></th:block>
+
+        <style>
+            #cesium-container{
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+
+        <script th:src="@{/externlib/cesium/Cesium.js}" defer></script>
+        <script th:src="@{/js/cesium/gd.js}" defer></script>
+        <script type="text/javascript">
+        window.addEventListener('load', ()=>{
+            const demo = new GeoJsonDemo();
+            demo.init();
+        });
+        </script>
+    </head>
+
+    <body>
+        <div th:insert="cmmn/header :: cmmnHeader"></div>
+
+        <div class="">
+            <div class="row">
+                <div id="cesium-container" class="col-10"></div>
+                <div class="col-2">                  
+                    <h3>강우량별 색,높이 변경</h3>  
+                    <select class="form-control sel">
+                        <option>-강우 빈도 선택-</option>
+                        <option value="Rain_2yr">강우 2년빈도</option>
+                        <option value="Rain_3yr">강우 3년빈도</option>
+                        <option value="Rain_5yr">강우 5년빈도</option>
+                        <option value="Rain_10yr">강우 10년빈도</option>
+                        <option value="Rain_20yr">강우 20년빈도</option>
+                        <option value="Rain_30yr">강우 30년빈도</option>
+                        <option value="Rain_50yr">강우 50년빈도</option>
+                        <option value="Rain_70yr">강우 70년빈도</option>
+                        <option value="Rain_80yr">강우 80년빈도</option>
+                        <option value="Rain_100yr">강우 100년빈도</option>
+                    </select>
+                    <button type="button" class="btn btn-primary prev">이전</button>
+                    <button type="button" class="btn btn-primary next">다음</button>
+                    <div class="mt-10">
+                        <h3>범례</h3>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="0">
+                            <div class="w-25 d-inline c" ></div>
+                            ~ 10
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="1">
+                            <div class="w-25 d-inline c" ></div>
+                            10 ~ 20
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="2">
+                            <div class="w-25 d-inline c" ></div>
+                            20 ~ 30
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="3">
+                            <div class="w-25 d-inline c" ></div>
+                            30 ~ 40
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="4">
+                            <div class="w-25 d-inline c" ></div>
+                            40 ~ 50
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="5">
+                            <div class="w-25 d-inline c" ></div>
+                            50 ~ 60
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="6">
+                            <div class="w-25 d-inline c" ></div>
+                            60 ~ 70
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="7">
+                            <div class="w-25 d-inline c" ></div>
+                            70 ~ 80
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="8">
+                            <div class="w-25 d-inline c" ></div>
+                            80 ~ 90
+                        </label>
+                        <label class="w-100">
+                            <input type="checkbox" class="form-control w-25 float-left index" value="9">
+                            <div class="w-25 d-inline c" ></div>
+                            90 ~ 
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div th:insert="cmmn/footer :: cmmnFooter"></div>
+    </body>
+</html>
